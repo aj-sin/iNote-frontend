@@ -22,7 +22,7 @@ function Signup(props) {
         if(credentials.password===credentials.cpassword){
         const {Name,email,password}=credentials
         //API CALL
-        const response = await fetch(`http://inoteapi.onrender.com/api/auth/createuser`, {
+        const response = await fetch(`https://inoteapi.onrender.com/api/auth/createuser`, {
             method: 'POST',
             mode: 'cors',
             headers:{
