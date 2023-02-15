@@ -20,7 +20,7 @@ function Login(props) {
         e.preventDefault()
         // console.log("User logged in")
         //API CALL
-        const response = await fetch(`https://inoteapi.onrender.com/api/auth/loginuser`, {
+        const response = await fetch(`http://inoteapi.onrender.com/api/auth/loginuser`, {
             method: 'POST',
             mode: 'cors',
             headers:{
