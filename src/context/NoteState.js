@@ -1,7 +1,8 @@
 import NoteContext from "./NoteContext";
 import { useState } from "react";
 const NoteState = (props) => {
-    const host = "https://inoteapi.onrender.com"
+    const host = "http://localhost:5000"
+    // const host = "https://inoteapi.onrender.com"
     const notesinitial = []
     const [notes, setNotes] = useState(notesinitial)
 
