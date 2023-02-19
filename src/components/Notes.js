@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import { Modal } from 'react-bootstrap';
+
+import "../css/note.css"
 import Addnote from './Addnote'
+
 import NoteContext from '../context/NoteContext'
 import NoteItem from './NoteItem'
+// import addlogo from "../assests/addlogo.png"
 import {
     useNavigate
 } from "react-router-dom";
@@ -28,9 +30,14 @@ const Notes = (props) => {
     const [note, setNote] = useState({ id: "", etitle: "", ediscription: "", etag: "" })
 
     const ref = useRef(null)
+    // const ref2=useRef(null)
+
+    // const handleonclick2=()=>{
+    //     ref2.current.click()
+    // }
 
     const updatenote = (currentnote) => {
-        ref.current.click()
+        ref.current.click()//when edit icon is clicked on note card this function clicks the lauch modal and update modal is show
         setNote({ id: currentnote._id, etitle: currentnote.title, ediscription: currentnote.discription, etag: currentnote.tag })
 
     }
@@ -54,68 +61,96 @@ const Notes = (props) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [modal, setModal] = useState(false);
+
+    const modalClose = () => setModal(false);
+    const modalShow = () => setModal(true);
 
     return (
         <>
-            {localStorage.getItem('token') && <div>
+            <div className='completenote'>
+                {/* <img  onClick={handleonclick2}  className='addlogo' src={addlogo} alt="" srcSet="" /> */}
+                
+                        <h2>Your Notes</h2>
+                    
+                        <button onClick={modalShow} className="btn-open">
+                          Add
+                        </button>
+                   
 
-                <Addnote onDataChange={handleDataChange} showalert={props.showalert} />
-                {
-                    //*Here we have Modal this will be hiden and only get visible we click on below button which is also hidden and we click this button using ref and useRef hook
-                }
-                <Button ref={ref} variant="primary d-none" onClick={handleShow}>
+                {modal && (
+                    <div className="modal">
+                        <div onClick={modalClose} className="overlay"></div>
+                        <div className="modal-content">
+                            <Addnote onDataChange={handleDataChange} showalert={props.showalert} modalClose={modalClose} />
+
+                            <button className="close-modal" onClick={modalClose}>
+                                <strong>X</strong>
+                            </button>
+                        </div>
+                    </div>
+                )}
+
+                <button className="btn-modal" ref={ref} variant="primary d-none" onClick={handleShow}>
                     Launch demo modal
-                </Button>
+                </button>
 
 
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Update Note</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <form>
-                            <div className="mb-3">
-                                <label htmlFor="title" className="form-label">Title</label>
-                                <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={Onchange} />
+                {show && (
+                    <div className="modal">
+                        <div onClick={handleClose} className="overlay"></div>
+                        <div className="modal-content Add-modal">
+                            <h3>Update Note</h3>
+                            <form className='modalform'>
+                                <div className="mb-3">
+                                    <label htmlFor="title" className="form-label"></label>
+                                    <input type="text" className="form-control" id="etitle" maxlength="50" name="etitle" placeholder='Title' value={note.etitle} aria-describedby="emailHelp" onChange={Onchange} />
 
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="description" className="form-label">discription</label>
-                                <input type="text" className="form-control" id="edescription" name='ediscription' value={note.ediscription} onChange={Onchange} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="tag" className="form-label">Tag</label>
-                                <input type="text" className="form-control" id="etag" name='etag' value={note.etag} onChange={Onchange} />
-                            </div>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="description" className="form-label"></label>
+                                    <input type="text" className="form-control" id="edescription" placeholder='Description' name='ediscription' maxlength="150" value={note.ediscription} onChange={Onchange} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="tag" className="form-label"></label>
+                                    <input type="text" className="form-control" placeholder='Tags' id="etag" name='etag' maxlength="30" value={note.etag} onChange={Onchange} />
+                                </div>
 
 
-                        </form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleclick}>
-                            Edit Note
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-                <div className='row my-3'>
-                    <h2>Your Notes</h2>
+                            </form>
+
+                            <button className="close-modal" onClick={handleClose}>
+                                <strong>X</strong>
+                            </button>
+                            <button variant="primary" className="modalbtn" onClick={handleclick}>
+                                Edit Note
+                            </button>
+
+                        </div>
+                    </div>
+                )}
+
+
+
+                {localStorage.getItem('token') && <div className='maincardholder'>
+
                     {/*//! iF Same credentials are inserted than it will not show the note
                 */}
                     <div className="container">
                         {notes.length === 0 && "Write a note man!!!"}
                     </div>
-                    {
-                        notes.map((note) => {
+                    <div className='notecard'>
 
-                            return <NoteItem note={{ note, updatenote }} key={note._id} showalert={props.showalert} />
-                        })
-                    }
+                        {
+                            notes.map((note) => {
 
-                </div>
-            </div>}
+                                return <NoteItem note={{ note, updatenote }} key={note._id} showalert={props.showalert} />
+                            })
+                        }
+                    </div>
+
+                </div>}
+            </div>
         </>
     )
 }

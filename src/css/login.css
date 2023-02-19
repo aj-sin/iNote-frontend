@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+.login {
+    width: 100vw;
+    height: 89vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+.welcome  h1{
+    font-size: 4.5rem;
+  margin: 2rem 0rem 0rem 0rem;
+  background: linear-gradient(
+    90deg,
+    #ff80aa 10.06%,
+    #ffa3c1 18.61%,
+    #fdfdfd 51.34%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .main {
+    color: white;
+    width: 40vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .credentials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .credentials input::placeholder{
+    font-size: 2rem;
+    color: #1fe5f1;
+    transform: translate(20px 2px);
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Lato', sans-serif; */
+  }
+  .emaildiv{
+    margin-bottom: 10px;
+  }
+  .logininput{
+    background-color: transparent;
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid rgb(97, 243, 253);
+    padding: 5px;
+    width:30vw;
+    font-size: 2rem;
+    color: #1fe5f1;
+    transform: translate(20px 2px);
+    font-family: 'Courier New', Courier, monospace;
+
+  }
+  
+
+  .btn{
+    display: flex;
+    flex-direction: column;
+    margin: 18px 10px;
+    align-items: center
+  }
+  .lg-btn{
+    font-size: 1.5rem;
+    width: 192px;
+    height: 52px;
+
+  background: linear-gradient(
+    90deg,
+    #1fe5f1 14.94%,
+    #85f8ff 38.89%,
+    #a3faff 64.17%,
+    #faffff 83.44%
+  );
+  border-radius: 19px;
+  margin-bottom: 14px;
+  }
+  .signup{
+    font-size: 1.5rem;
+    width: 192px;
+    height: 52px;
+
+  background: linear-gradient(
+    89.63deg,
+    #ff76a4 30.02%,
+    #f5d3de 68.41%,
+    #f8f5f6 86.51%
+  );
+  border-radius: 19px;
+  }
+
+
+  .graphic {
+    display: flex;
+    align-items: center;
+  }
+  .img {
+    width: 36rem;
+    height: 24rem;
+    filter: drop-shadow(31px 32px 21px rgba(68, 233, 226, 0.36));
+  }
+  /* @media screen and (max-width:412px){
+.main{
+
+  width: 84vw;
+}
+  } */
+
+  @media screen and (max-width:712px){
+    .logininput {
+      
+      width: 70vw;}
+      .main {
+        width: 84vw;
+        margin-left: 138px;}
+    }

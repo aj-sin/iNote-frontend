@@ -1,65 +1,84 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+
 import { useState } from 'react';
 import {
-    useNavigate
-  } from "react-router-dom";
+  useNavigate
+} from "react-router-dom";
+import "../css/login.css"
+import graphic from "../assests/img.png"
+import {
+  Link
+} from "react-router-dom";
 
 
 function Login(props) {
 
-    const [credentials, setCredentials] = useState({email:"",password:""})
-    let navigate=useNavigate()
-    const onChange=(e)=>{
-        setCredentials({...credentials,[e.target.name]:e.target.value})
+  const [credentials, setCredentials] = useState({ email: "", password: "" })
+  let navigate = useNavigate()
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value })
+  }
+
+
+
+  const handleonsubmit = async (e) => {
+    e.preventDefault()
+    // console.log("User logged in")
+    //API CALL
+    const response = await fetch(`https://inoteapi.onrender.com/api/auth/loginuser`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': "application/json"
+      },
+
+      body: JSON.stringify({ email: credentials.email, password: credentials.password })
+    });
+    const json = await response.json()
+    // console.log(json)
+
+    if (json.success) {
+      localStorage.setItem("token", json.authtoken)
+      navigate('/note')
+      props.showalert("Login Successful", "success")
+    } else {
+      props.showalert("Invalid Credentials", "danger")
     }
 
-    
-
-    const handleonsubmit=async(e)=>{
-        e.preventDefault()
-        // console.log("User logged in")
-        //API CALL
-        const response = await fetch(`http://localhost:5000/api/auth/loginuser`, {
-            method: 'POST',
-            mode: 'cors',
-            headers:{
-                'Content-Type':"application/json"
-            },
-
-            body: JSON.stringify({ email:credentials.email,password:credentials.password })
-        });
-        const json=await response.json()
-        // console.log(json)
-
-        if(json.success){
-            localStorage.setItem("token",json.authtoken)
-            navigate('/')
-            props.showalert("Login Successful","success")
-        }else{
-            props.showalert("Invalid Credentials","danger")
-        }
-
-    }
+  }
   return (
-    <Form onSubmit={handleonsubmit}>
-      <Form.Group className="mb-3" controlId="email" >
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" name='email'   onChange={onChange} value={credentials.email} />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+    <>
+      <div className="login">
+        <div className="main">
 
-      <Form.Group className="mb-3" controlId="password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control  type="password" placeholder="Password" name='password' onChange={onChange} value={credentials.password}  />
-      </Form.Group>
-      
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        
+        <div className="welcome">
+          <h1>Welcome</h1>
+        </div>
+        <div className="credentials">
+          <form onSubmit={handleonsubmit}>
+
+            <div className='emaildiv'>
+              <label htmlFor="email"></label>
+              <input className='logininput' type="email" placeholder="Enter email" name='email' onChange={onChange} value={credentials.email} />
+            </div>
+            <div>
+              <label htmlFor="password"></label>
+              <input className='logininput' type="password" placeholder="Password" name='password' onChange={onChange} value={credentials.password} />
+            </div>
+            <div className="btn">
+
+            <button className='lg-btn' type="submit">Login</button>
+            <Link to="/signup"><button className='signup'><span>Sign up</span></button></Link>
+            </div>
+          </form>
+        </div>
+        </div>
+        <div className="graphic">
+        <img className='img' src={graphic} alt="graphic" srcSet="" />
+        </div>
+      </div>
+
+    </>
   );
 }
 

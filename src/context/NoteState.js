@@ -1,12 +1,26 @@
 import NoteContext from "./NoteContext";
 import { useState } from "react";
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
-    // const host = "https://inoteapi.onrender.com"
+    // const host = "http://localhost:5000"
+    const host = "https://inoteapi.onrender.com"
     const notesinitial = []
     const [notes, setNotes] = useState(notesinitial)
 
+    const userinitial=[]
+    const [USER, setUSER] = useState(userinitial)
     //get notes
+    const getuser = async () => {
+        // API CALL
+        const response = await fetch(`${host}/api/auth/getuser`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+                'auth-token': localStorage.getItem("token")
+            },
+        });
+        const json = await response.json()
+        setUSER(json)
+    }
     const getnote = async () => {
         // API CALL
         const response = await fetch(`${host}/api/note/fetchallnote`, {
@@ -98,7 +112,7 @@ const NoteState = (props) => {
 
     }
     return (
-        <NoteContext.Provider value={{ notes, addnote, deletenote, editnote, getnote }}>
+        <NoteContext.Provider value={{ notes, addnote, deletenote, editnote, getnote,getuser,USER }}>
             {props.children}
         </NoteContext.Provider>
     )

@@ -1,0 +1,32 @@
+.Add-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.mb-3{
+    width:185%
+}
+.form-control{
+    width: 100%;
+    height: 2rem;
+    border-radius: 11px;
+    margin-bottom: 7px;
+}
+.modalbtn{
+    width: 119px;
+    height: 37px;
+    background: linear-gradient( 90deg, #1fe5f1 14.94%, #85f8ff 38.89%, #a3faff 64.17%, #faffff 83.44% );
+    border-radius: 26px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}

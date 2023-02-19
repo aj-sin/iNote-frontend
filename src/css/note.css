@@ -1,0 +1,128 @@
+.completenote{
+  min-height: 90vh;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.addlogo {
+  position: fixed;
+  top: 52px;
+  right: 0;
+  width: 8rem;
+  /* background: radial-gradient(#c400f0b0, transparent); */
+  height: 6rem;
+  filter: drop-shadow(31px 32px 21px rgba(68, 233, 226, 0.36));
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  font-size: 18px;
+  /* position: absolute; */
+  /* z-index: -7; */
+  display: none;
+}
+.btn-open {
+  position: fixed;
+  bottom: 17px;
+  right: 44px;
+  width: 150px;
+  height: 52px;
+  box-shadow: 4px 3px 39px 1px #97f5ff;
+  background: linear-gradient(
+    90deg,
+    #1fe5f1 14.94%,
+    #85f8ff 38.89%,
+    #a3faff 64.17%,
+    #faffff 83.44%
+  );
+  border-radius: 15px;
+  font-size: 1.3rem;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: linear-gradient(180deg, #ffd4e3 0%, #d9d9d9 100%);
+  padding: 14px 28px;
+  border-radius: 15px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  background-color: transparent;
+}
+h2 {
+  font-size: 3.5rem;
+  margin: 1rem 0rem 1rem 2.5rem;
+  background: linear-gradient(
+    97deg,
+    #ff80aa 4.06%,
+    #ffa3c1 8.61%,
+    #fdfdfd 19.34%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  justify-content: center;
+}
+h3 {
+}
+.maincardholder {
+  display: flex;
+  justify-content: center;
+}
+
+.notecard {
+  min-height: 72vh;
+  width: 95%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
+
+  grid-row-gap: 10px;
+  /* flex-direction: row;
+    flex-wrap: wrap; */
+}
+
+@media screen and (max-width: 790px) {
+  .notecard {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 412px) {
+  .card {
+    width: 185px;
+    height: 196px;
+  }
+  .fa-regular, .far {
+    margin-right: 10px;
+}
+.btn-open {
+  position: fixed;
+  bottom: 37px;
+  right: 14px;}
+}

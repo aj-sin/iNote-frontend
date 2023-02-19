@@ -1,0 +1,40 @@
+.card{
+    width: 281px;
+    height: 259px;
+    border-radius: 16px;
+    background: linear-gradient(108.06deg, #FFA3C1 10.97%, #FFFFFF 79.14%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px 5px;
+    box-shadow: 0px 8px 16px 0px #85f8ff6e;
+}
+.card-body{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.iconpack{
+    display: flex;
+}
+.icon{
+    margin: 0px 11px;
+}
+
+.topheading{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    font-size: 1.4rem;
+    justify-content: space-between;
+}
+
+.card-title{
+    margin: 0px;
+    max-width: 200px;
+}
+.card-body p{
+    word-wrap: break-word;
+
+}

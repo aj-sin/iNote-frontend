@@ -1,0 +1,27 @@
+.login-btn-signup{
+    font-size: 1.5rem;
+    width: 192px;
+    height: 52px;
+
+  background: linear-gradient(
+    90deg,
+    #1fe5f1 14.94%,
+    #85f8ff 38.89%,
+    #a3faff 64.17%,
+    #faffff 83.44%
+  );
+  border-radius: 19px;
+  margin-bottom: 14px;
+}
+.btn-signup{
+    margin-top: 40px;
+}
+
+.gradient{
+    background: linear-gradient(
+    89.63deg,
+    #ff76a4 30.02%,
+    #f5d3de 68.41%,
+    #f8f5f6 86.51%
+  );
+}

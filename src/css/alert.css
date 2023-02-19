@@ -1,0 +1,52 @@
+.alert{
+    position: fixed;
+    margin: auto;
+    left: 31%;
+    width: 40vw;
+    height: 95px;
+    /* background-color: rgb(157, 157, 228); */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 1.5rem;
+    animation-duration: 1s;
+  animation-name: slide-in-out;
+  animation-fill-mode: forwards;
+}
+
+.success{
+    background: linear-gradient(90deg, #3DFF39 14.46%, #F4FAF3 92.94%);
+}
+
+.error{
+    background: linear-gradient(90deg, #F21818 14.46%, #F3817E 39.56%, #F4FAF3 87.3%);
+}
+@keyframes slide-in-out {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+
+
+  @media screen and (max-width:770px) {
+    .alert {
+      width: 64vw;
+      height: 55px;
+      /* font-size: 10px; */
+      /* background-color: rgb(157, 157, 228); */
+      border-radius: 10px;
+      font-size: 1rem;}
+  }

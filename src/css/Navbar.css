@@ -1,0 +1,137 @@
+nav {
+  /* background-color: aquamarine; */
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  margin: 0;
+  align-items: flex-end;
+  transform: translate(-0.7rem, 0px);
+}
+li {
+  list-style: none;
+  margin: 0px 1rem;
+}
+.list-items {
+  margin: 2px;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(19px, 2vw, 2.8rem);
+}
+/* .nav-title{
+    font-size: 2.5rem;
+} */
+.icon {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  height: inherit;
+  margin: 0;
+  align-items: flex-end;
+}
+.dropbtn {
+  font-size: clamp(14px, 1.3vw, 2.8rem);
+  border: 2px solid #faffff;
+  width: clamp(25px, 3.2vw, 2.8rem);
+  height: clamp(25px, 3.2vw, 2.8rem);
+  border-radius: 73%;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  /* margin: 0; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 8px;
+  right: 0;
+  background-color: #a7f8d5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar .list-items:hover,
+.dropdown:hover .dropbtn {
+  color: rgb(12, 12, 12);
+}
+.navbar .dropdown:hover .dropbtn {
+  border: 2px solid black;
+}
+.dropdown-content .drop-item {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.drop-item button {
+  width: 119px;
+  height: 37px;
+  background: linear-gradient(
+    90deg,
+    #1fe5f1 14.94%,
+    #85f8ff 38.89%,
+    #a3faff 64.17%,
+    #faffff 83.44%
+  );
+  border-radius: 26px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+.drop-item button:hover button {
+  background: linear-gradient(89.63deg, #635157 11.93%, #fdf4f7 93.57%);
+  color: white;
+}
+
+@media screen and (max-width: 790px) {
+  .list-items {
+    margin: 2px;
+    color: white;
+    text-decoration: none;
+    font-size: 34px;
+  }
+  .dropbtn {
+    font-size: clamp(26px, 1.3vw, 2.8rem);
+    border: 4px solid #faffff;
+    width: clamp(51px, 3.2vw, 2.8rem);
+    height: clamp(52px, 3.2vw, 2.8rem);
+  }
+}
+@media screen and (max-width: 412px) {
+  .list-items {
+    font-size: 23px;
+  }
+  .nav-title{
+    display: none;
+  }
+  ul{
+    align-items: center;
+    transform: translate(-4.7rem, 0px);
+  }
+  .icon {
+    margin: 0px -18px;
+}
+
+}
