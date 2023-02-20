@@ -5,13 +5,12 @@ import Addnote from './Addnote'
 
 import NoteContext from '../context/NoteContext'
 import NoteItem from './NoteItem'
-// import addlogo from "../assests/addlogo.png"
 import {
     useNavigate
 } from "react-router-dom";
 const Notes = (props) => {
     const context = useContext(NoteContext)
-    const { notes, getnote, editnote } = context
+    const { notes, getnote, editnote ,getuser} = context
     const [childData, setChildData] = useState(null);
     const navigate = useNavigate()
     const handleDataChange = data => {
@@ -21,6 +20,7 @@ const Notes = (props) => {
         if (localStorage.getItem('token')) {
             // console.log("getting note")
             getnote()
+            getuser()
         } else {
             navigate("/login")
 

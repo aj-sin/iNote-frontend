@@ -1,4 +1,4 @@
-import React,{useEffect,useContext} from 'react'
+import React,{useContext} from 'react'
 import NoteContext from '../context/NoteContext'
 
 import "../css/Navbar.css"
@@ -8,17 +8,10 @@ import {
   
   function Navbar() {
     const context = useContext(NoteContext)
-    const { USER,getuser} = context
+    const { USER} = context
     console.log(USER)
-    useEffect(() => {
-      if(localStorage.getItem('token'))
-      {
-        getuser()
-        // eslint-disable-next-line 
-      }
     
-     // eslint-disable-next-line 
-    }, [])
+   
     
     const navigate = useNavigate()
     const handlelogout=()=>{
@@ -28,7 +21,7 @@ import {
    
   return (
     <>
-    <nav className="navbar">
+    <nav >
   
       <ul className="navbar">
         <li className="nav-item">

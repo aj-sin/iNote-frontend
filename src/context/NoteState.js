@@ -12,7 +12,7 @@ const NoteState = (props) => {
     const getuser = async () => {
         // API CALL
         const response = await fetch(`${host}/api/auth/getuser`, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': "application/json",
                 'auth-token': localStorage.getItem("token")

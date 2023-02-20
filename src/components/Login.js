@@ -5,12 +5,15 @@ import {
 } from "react-router-dom";
 import "../css/login.css"
 import graphic from "../assests/img.png"
+// import NoteContext from '../context/NoteContext'
 import {
   Link
 } from "react-router-dom";
 
 
 function Login(props) {
+  // const context = useContext(NoteContext)
+  //   const { getuser} = context
 
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   let navigate = useNavigate()
@@ -22,6 +25,7 @@ function Login(props) {
 
   const handleonsubmit = async (e) => {
     e.preventDefault()
+    // getuser()
     // console.log("User logged in")
     //API CALL
     const response = await fetch(`https://inoteapi.onrender.com/api/auth/loginuser`, {
@@ -48,7 +52,7 @@ function Login(props) {
   return (
     <>
       <div className="login">
-        <div className="main">
+        <div className="loginmain">
 
         
         <div className="welcome">

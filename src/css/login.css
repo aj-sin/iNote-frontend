@@ -22,7 +22,7 @@
     display: flex;
     margin-bottom: 30px;
   }
-  .main {
+  .loginmain {
     color: white;
     width: 40vw;
     height: 85vh;
@@ -99,11 +99,7 @@
     display: flex;
     align-items: center;
   }
-  .img {
-    width: 36rem;
-    height: 24rem;
-    filter: drop-shadow(31px 32px 21px rgba(68, 233, 226, 0.36));
-  }
+ 
   /* @media screen and (max-width:412px){
 .main{
 
@@ -111,11 +107,11 @@
 }
   } */
 
-  @media screen and (max-width:712px){
+  /* @media screen and (max-width:712px){
     .logininput {
       
       width: 70vw;}
       .main {
         width: 84vw;
         margin-left: 138px;}
-    }
+    } */
