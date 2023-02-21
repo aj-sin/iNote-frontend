@@ -136,9 +136,9 @@ const Notes = (props) => {
 
                     {/*//! iF Same credentials are inserted than it will not show the note
                 */}
-                    <div className="container">
-                        {notes.length === 0 && "Write a note man!!!"}
-                    </div>
+                {notes.length === 0 && <div className="container">
+                        "No Notes!!!"
+                    </div>}
                     <div className='notecard'>
 
                         {

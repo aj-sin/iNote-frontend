@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 .login {
-    width: 100vw;
-    height: 89vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-.welcome  h1{
-    font-size: 4.5rem;
+  width: 100vw;
+  height: 89vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.welcome h1 {
+  font-size: 4.5rem;
   margin: 2rem 0rem 0rem 0rem;
   background: linear-gradient(
     90deg,
@@ -19,56 +19,54 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   justify-content: center;
-    display: flex;
-    margin-bottom: 30px;
-  }
-  .loginmain {
-    color: white;
-    width: 40vw;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .credentials{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .credentials input::placeholder{
-    font-size: 2rem;
-    color: #1fe5f1;
-    transform: translate(20px 2px);
-    font-family: 'Courier New', Courier, monospace;
-    /* font-family: 'Lato', sans-serif; */
-  }
-  .emaildiv{
-    margin-bottom: 10px;
-  }
-  .logininput{
-    background-color: transparent;
-    height: 2rem;
-    border: none;
-    border-bottom: 2px solid rgb(97, 243, 253);
-    padding: 5px;
-    width:30vw;
-    font-size: 2rem;
-    color: #1fe5f1;
-    transform: translate(20px 2px);
-    font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  margin-bottom: 30px;
+}
+.loginmain {
+  color: white;
+  width: 40vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+.credentials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.credentials input::placeholder {
+  font-size: 2rem;
+  color: #1fe5f1;
+  transform: translate(20px 2px);
+  font-family: "Courier New", Courier, monospace;
+  /* font-family: 'Lato', sans-serif; */
+}
+.emaildiv {
+  margin-bottom: 10px;
+}
+.logininput {
+  background-color: transparent;
+  height: 2rem;
+  border: none;
+  border-bottom: 2px solid rgb(97, 243, 253);
+  padding: 5px;
+  width: 30vw;
+  font-size: 2rem;
+  color: #1fe5f1;
+  transform: translate(20px 2px);
+  font-family: "Courier New", Courier, monospace;
+}
 
-  }
-  
-
-  .btn{
-    display: flex;
-    flex-direction: column;
-    margin: 18px 10px;
-    align-items: center
-  }
-  .lg-btn{
-    font-size: 1.5rem;
-    width: 192px;
-    height: 52px;
+.btn {
+  display: flex;
+  flex-direction: column;
+  margin: 18px 10px;
+  align-items: center;
+}
+.lg-btn {
+  font-size: 1.5rem;
+  width: 192px;
+  height: 52px;
 
   background: linear-gradient(
     90deg,
@@ -79,11 +77,11 @@
   );
   border-radius: 19px;
   margin-bottom: 14px;
-  }
-  .signup{
-    font-size: 1.5rem;
-    width: 192px;
-    height: 52px;
+}
+.signup {
+  font-size: 1.5rem;
+  width: 192px;
+  height: 52px;
 
   background: linear-gradient(
     89.63deg,
@@ -92,26 +90,29 @@
     #f8f5f6 86.51%
   );
   border-radius: 19px;
-  }
+}
 
+.graphic {
+  display: flex;
+  align-items: center;
+}
 
-  .graphic {
-    display: flex;
-    align-items: center;
-  }
- 
-  /* @media screen and (max-width:412px){
+/* @media screen and (max-width:412px){
 .main{
 
   width: 84vw;
 }
   } */
 
-  @media screen and (max-width:480px){
-    .logininput {
-      
-      width: 70vw;}
-      .main {
+@media screen and (max-width: 480px) {
+  .logininput {
+    width: 80vw;
+  }
+
+  .loginmain {
+    width: 100vw;
+  }
+  /* .main {
         width: 84vw;
-        margin-left: 138px;}
-    }
+        margin-left: 138px;} */
+}

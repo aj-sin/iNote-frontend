@@ -49,7 +49,7 @@ function Signup(props) {
         props.showalert("Login Successful", "success")
 
       } else {
-        props.showalert("User with this email address Already Exists.....", "danger")
+        props.showalert("Email Already Exists.....", "danger")
       }
     } else {
       props.showalert("Password Do not match", "danger")
@@ -63,7 +63,7 @@ function Signup(props) {
         <div className="main">
 
 
-          <div className="welcome">
+          <div className="signuph1">
             <h1>Sign Up</h1>
           </div>
           <div className="credentials">

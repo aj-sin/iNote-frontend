@@ -38,3 +38,11 @@
     word-wrap: break-word;
 
 }
+
+@media screen and (max-width: 480px) {
+   
+    .card {
+      width: 174px;
+      height: 196px;
+    }
+}

@@ -118,8 +118,17 @@ h3 {
   .notecard {
     grid-template-columns: auto auto;
   }
+} */
+@media screen and (max-width: 480px) {
+  .maincardholder .container {
+    
+    width: 89vw;
 }
-@media screen and (max-width: 412px) {
+  .notecard {
+    grid-template-columns: auto auto;
+    min-height: 51vh;
+    /* transform: translateX(-10px); */
+  }
   .card {
     width: 185px;
     height: 196px;
@@ -131,4 +140,4 @@ h3 {
   position: fixed;
   bottom: 37px;
   right: 14px;}
-} */
+}
