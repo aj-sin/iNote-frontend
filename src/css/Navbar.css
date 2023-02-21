@@ -119,7 +119,7 @@ li {
     height: clamp(52px, 3.2vw, 2.8rem);
   }
 } */
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 480px) {
   /* .list-items {
     font-size: 23px;
   } */

@@ -14,6 +14,8 @@ import {
 function Login(props) {
   // const context = useContext(NoteContext)
   //   const { getuser} = context
+  // const host = "http://localhost:5000"
+    const host = "https://inoteapi.onrender.com"
 
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   let navigate = useNavigate()
@@ -28,7 +30,7 @@ function Login(props) {
     // getuser()
     // console.log("User logged in")
     //API CALL
-    const response = await fetch(`https://inoteapi.onrender.com/api/auth/loginuser`, {
+    const response = await fetch(`${host}/api/auth/loginuser`, {
       method: 'POST',
       mode: 'cors',
       headers: {

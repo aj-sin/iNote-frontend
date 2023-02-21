@@ -13,6 +13,10 @@ import {
 
 function Signup(props) {
 
+  // const host = "http://localhost:5000"
+    const host = "https://inoteapi.onrender.com"
+
+
   const [credentials, setCredentials] = useState({ Name: "", email: "", password: "", cpassword: "" })
   let navigate = useNavigate()
   const onChange = (e) => {
@@ -27,7 +31,7 @@ function Signup(props) {
     if (credentials.password === credentials.cpassword) {
       const { Name, email, password } = credentials
       //API CALL
-      const response = await fetch(`https://inoteapi.onrender.com/api/auth/createuser`, {
+      const response = await fetch(`${host}/api/auth/createuser`, {
         method: 'POST',
         mode: 'cors',
         headers: {
