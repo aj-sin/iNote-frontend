@@ -35,16 +35,16 @@ const Addnote = (props) => {
             <form className='modalform' onSubmit={handleclick}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label"></label>
-                    <input type="text" className="form-control" id="title"  name="title" placeholder='Title' aria-describedby="emailHelp" maxlength="40" value={note.title} onChange={Onchange1} />
+                    <input type="text" className="form-control" id="title"  name="title" placeholder='Title' aria-describedby="emailHelp" maxLength="40" value={note.title} onChange={Onchange1} />
 
                 </div>
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label"></label>
-                    <input type="text" value={note.description} className="form-control" id="description" placeholder='Description' name='description' maxlength="150" onChange={Onchange1} />
+                    <input type="text" value={note.description} className="form-control" id="description" placeholder='Description' name='description' maxLength="150" onChange={Onchange1} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label"></label>
-                    <input type="text" className="form-control" id="tag" name='tag' placeholder='Tags' value={note.tag} maxlength="20" onChange={Onchange1} />
+                    <input type="text" className="form-control" id="tag" name='tag' placeholder='Tags' value={note.tag} maxLength="20" onChange={Onchange1} />
                 </div>
                 <div>
 

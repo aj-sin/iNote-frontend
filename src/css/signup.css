@@ -12,6 +12,10 @@
   );
   border-radius: 19px;
   margin-bottom: 14px;
+  transition: background 200ms ease-in-out;
+}
+.login-btn-signup:hover{
+  background:#93fff5;
 }
 .btn-signup{
     margin-top: 40px;

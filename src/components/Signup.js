@@ -27,6 +27,8 @@ function Signup(props) {
 
   const handleonsubmit = async (e) => {
     e.preventDefault()
+    props.setProgress(10)
+
     // console.log("User signed in")
     if (credentials.password === credentials.cpassword) {
       const { Name, email, password } = credentials
@@ -40,8 +42,12 @@ function Signup(props) {
 
         body: JSON.stringify({ Name, email, password })
       });
+      props.setProgress(40)
+
       const json = await response.json()
       // console.log(json)
+      props.setProgress(90)
+
 
       if (json.success) {
         localStorage.setItem("token", json.authtoken)
@@ -54,6 +60,8 @@ function Signup(props) {
     } else {
       props.showalert("Password Do not match", "danger")
     }
+    props.setProgress(100)
+
 
   }
   return (

@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 const Notes = (props) => {
     const context = useContext(NoteContext)
-    const { notes, getnote, editnote ,getuser} = context
+    const { notes, getnote, editnote ,getuser,shownotes} = context
     const [childData, setChildData] = useState(null);
     const navigate = useNavigate()
     const handleDataChange = data => {
@@ -104,16 +104,16 @@ const Notes = (props) => {
                             <form className='modalform'>
                                 <div className="mb-3">
                                     <label htmlFor="title" className="form-label"></label>
-                                    <input type="text" className="form-control" id="etitle" maxlength="50" name="etitle" placeholder='Title' value={note.etitle} aria-describedby="emailHelp" onChange={Onchange} />
+                                    <input type="text" className="form-control" id="etitle" maxLength="50" name="etitle" placeholder='Title' value={note.etitle} aria-describedby="emailHelp" onChange={Onchange} />
 
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="description" className="form-label"></label>
-                                    <input type="text" className="form-control" id="edescription" placeholder='Description' name='ediscription' maxlength="150" value={note.ediscription} onChange={Onchange} />
+                                    <input type="text" className="form-control" id="edescription" placeholder='Description' name='ediscription' maxLength="150" value={note.ediscription} onChange={Onchange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="tag" className="form-label"></label>
-                                    <input type="text" className="form-control" placeholder='Tags' id="etag" name='etag' maxlength="30" value={note.etag} onChange={Onchange} />
+                                    <input type="text" className="form-control" placeholder='Tags' id="etag" name='etag' maxLength="30" value={note.etag} onChange={Onchange} />
                                 </div>
 
 
@@ -132,7 +132,7 @@ const Notes = (props) => {
 
 
 
-                {localStorage.getItem('token') && <div className='maincardholder'>
+                {shownotes && <div className='maincardholder'>
 
                     {/*//! iF Same credentials are inserted than it will not show the note
                 */}

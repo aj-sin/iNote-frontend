@@ -29,4 +29,8 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
+    transition: background 200ms ease-in-out;
+}
+.modalbtn:hover{
+  background:#93fff5;
 }

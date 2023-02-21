@@ -85,13 +85,20 @@
     #faffff 83.44%
   );
   border-radius: 22px;
+  transition: background 200ms ease-in-out;
 }
+
 .login-btn span {
   background: linear-gradient(90deg, #e80bd2 26.06%, #16151b 80.93%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.login-btn:hover {
+  background: #9fedd5;
+}
+
 
 .signup-btn {
   font-size: 3vw;
@@ -106,6 +113,10 @@
   );
   border-radius: 22px;
   margin-left: 2vw;
+  transition: background 200ms ease-in-out;
+}
+.signup-btn:hover {
+  background: #9fedd5;
 }
 .signup-btn span {
   background: linear-gradient(
@@ -199,3 +210,5 @@
 }
 
 }
+
+

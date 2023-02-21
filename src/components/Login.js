@@ -30,6 +30,8 @@ function Login(props) {
     // getuser()
     // console.log("User logged in")
     //API CALL
+    props.setProgress(10)
+
     const response = await fetch(`${host}/api/auth/loginuser`, {
       method: 'POST',
       mode: 'cors',
@@ -39,6 +41,8 @@ function Login(props) {
 
       body: JSON.stringify({ email: credentials.email, password: credentials.password })
     });
+    props.setProgress(50)
+
     const json = await response.json()
     // console.log(json)
 
@@ -49,6 +53,8 @@ function Login(props) {
     } else {
       props.showalert("Invalid Credentials", "danger")
     }
+    props.setProgress(100)
+
 
   }
   return (

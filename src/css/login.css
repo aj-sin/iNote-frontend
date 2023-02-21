@@ -77,6 +77,10 @@
   );
   border-radius: 19px;
   margin-bottom: 14px;
+  transition: background 200ms ease-in-out;
+}
+.lg-btn:hover{
+  background:#93fff5;
 }
 .signup {
   font-size: 1.5rem;
@@ -90,6 +94,10 @@
     #f8f5f6 86.51%
   );
   border-radius: 19px;
+  transition: background 200ms ease-in-out;
+}
+.signup:hover{
+  background:#93fff5;
 }
 
 .graphic {

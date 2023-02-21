@@ -14,8 +14,10 @@ import NoteState from './context/NoteState';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import { useState } from 'react'
+import LoadingBar from 'react-top-loading-bar'
 function App() {
   const [alert, setalert] = useState(null);
+  const [progress, setProgress] = useState(0)
   const showalert = (message, type) => {
     setalert({
       msg: message,
@@ -27,10 +29,15 @@ function App() {
   }
   return (
     <>
-      <NoteState showalert={showalert}>
+      <NoteState showalert={showalert} setProgress={setProgress}>
 
         <Router>
-          <Navbar />
+        <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
+          <Navbar showalert={showalert} />
           <Alert alert={alert} />
           
             <Routes>
@@ -38,8 +45,8 @@ function App() {
               {//|make this notter(note)
               }
               <Route exact path="/note" element={<Notes showalert={showalert} />} />
-              <Route exact path="/login" element={<Login showalert={showalert} />} />
-              <Route exact path="/signup" element={<Signup showalert={showalert} />} />
+              <Route exact path="/login" element={<Login showalert={showalert} setProgress={setProgress} />} />
+              <Route exact path="/signup" element={<Signup showalert={showalert} setProgress={setProgress} />} />
               <Route exact path="/About" element={<About />} />
 
 

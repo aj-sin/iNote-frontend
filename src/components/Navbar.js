@@ -6,17 +6,18 @@ import {
     Link,useNavigate
   } from "react-router-dom";
   
-  function Navbar() {
+  function Navbar(props) {
     const context = useContext(NoteContext)
-    const { USER} = context
-    console.log(USER)
+    const { USER,setShownotes} = context
     
    
     
     const navigate = useNavigate()
     const handlelogout=()=>{
+      setShownotes(false)
       localStorage.removeItem('token')
       navigate("/login")
+      props.showalert("Logout Successful","success")
     }
    
   return (

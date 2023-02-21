@@ -45,6 +45,10 @@ body.active-modal {
   );
   border-radius: 15px;
   font-size: 1.3rem;
+  transition: background 200ms ease-in-out;
+}
+.btn-open:hover{
+  background:#93fff5;
 }
 
 .modal,
